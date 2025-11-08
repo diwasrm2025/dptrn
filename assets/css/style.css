@@ -1,20 +1,15 @@
-/*
-TemplateMo 565 Onix Digital
-https://templatemo.com/tm-565-onix-digital
-*/
-
-/* 
----------------------------------------------
-CSS Custom Properties (Root Variables)
---------------------------------------------- 
-*/
 :root {
   /* Colors */
-  --color-primary-blue:#e66b90;
-  --color-primary-red: #126d1e;
-  --color-primary-red-alt: #c667ec;
-  --color-gradient-start: #58d162;
-  --color-gradient-end: #8eeb42;
+  --banner-bg-image1:url(../images/baner-dec-left.png);
+  --banner-bg-image2:url(../images/baner-dec-right.png);
+  --light1:#fef5ff;
+  --light2:#fdebeb;
+  --light3:#ffffff;
+  --color-primary-blue:#7554ac;
+  --color-primary-red: #e75643;
+  --color-primary-red-alt: #9364e0;
+  --color-gradient-start: #e75643;
+  --color-gradient-end: #7554ac;
   --color-text-primary: #1f1717;
   --color-text-secondary: #7a7a7a;
   --color-text-light: #afafaf;
@@ -30,7 +25,7 @@ CSS Custom Properties (Root Variables)
   --color-shadow-dark: rgba(0,0,0,0.06);
   
   /* Typography */
-  --font-family-primary: 'Poppins', sans-serif;
+  --font-family-primary: 'Montserrat';
   --font-size-base: 15px;
   --font-size-small: 13px;
   --font-size-medium: 18px;
@@ -107,8 +102,7 @@ CSS Custom Properties (Root Variables)
   --z-index-header: 100;
   --z-index-preloader: 9999;
   --z-index-dropdown: -1;
-  --banner-bg-image1:url(../images/baner-dec-left.png);
-  --banner-bg-image2:url(../images/baner-dec-right.png);
+
 }
 
 /* 
@@ -116,7 +110,7 @@ CSS Custom Properties (Root Variables)
 font & reset css
 --------------------------------------------- 
 */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 
 /* 
 ---------------------------------------------
@@ -420,8 +414,9 @@ header
   transition: var(--transition-slow);
 }
 
-.background-header .main-nav .logo {
-  line-height: 75px;
+.main-nav .logo img{
+  height:50px;
+  margin-top:-30px;
 }
 
 .background-header .main-nav .nav {
@@ -892,7 +887,8 @@ Banner Style
   padding: 236px 0px 130px 0px;
   position: relative;
   overflow: hidden;
-  background:linear-gradient(to right,#ffffff,#f7e0e0);
+  /* background:linear-gradient(135deg,var(--light1),var(--light2),var(--light3)); */
+  box-shadow:0px 1px 10px #ffffff;
 }
 
 .main-banner:after {
@@ -1041,33 +1037,51 @@ Services Style
   margin-bottom: -10px;
 }
 
+
 .our-services .item {
   text-align: center;
   margin: var(--spacing-md);
   border-radius: var(--radius-small);
-  background-color: var(--color-background-white);
   padding: var(--spacing-2xl);
   box-shadow: var(--shadow-medium);
 }
+.our-services .owl-item:nth-child(odd) .item{
+  background:var(--color-text-white);
+}
+
+.our-services .owl-item:nth-child(even) .item{
+  background:var(--color-gradient-start);
+}
+
+
+
 
 .our-services .item h4 {
   font-size: var(--font-size-large);
   font-weight: var(--font-weight-bold);
-  color: var(--color-text-primary);
   margin-bottom: var(--spacing-2xl);
   line-height: var(--line-height-base);
 }
-
+.our-services .item p {
+  margin-top: 35px;
+  padding-top: var(--spacing-2xl);
+  border-top: 1px solid var(--color-border-light);
+}
 .our-services .item .icon {
   width: var(--size-icon-medium);
   height: var(--size-icon-medium);
   margin: 0 auto;
 }
 
-.our-services .item p {
-  margin-top: 35px;
-  padding-top: var(--spacing-2xl);
-  border-top: 1px solid var(--color-border-light);
+.our-services .owl-item:nth-child(odd) .item h4,
+.our-services .owl-item:nth-child(odd) .item .icon,
+.our-services .owl-item:nth-child(odd) .item p{
+  color: var(--color-text-black);
+}
+.our-services .owl-item:nth-child(even) .item h4,
+.our-services .owl-item:nth-child(even) .item .icon,
+.our-services .owl-item:nth-child(even) .item p{
+  color: var(--color-text-white);
 }
 
 .our-services .owl-dots {
