@@ -383,9 +383,7 @@ header
   color: var(--color-primary-red-alt) !important;
 }
 
-.background-header .nav li a.active {
-  color: var(--color-primary-red-alt) !important;
-}
+
 
 .header-area {
   background-color: var(--color-background-white);
@@ -426,14 +424,13 @@ header
 .header-area .main-nav .nav {
   float: right;
   margin-top: var(--spacing-2xl);
-  margin-right: 0px;
   background-color: transparent;
   transition: var(--transition-slow);
   position: relative;
   z-index: var(--z-index-nav);
 }
 
-.header-area .main-nav .nav li {
+.header-area .main-nav .nav li a{
   padding-left: var(--spacing-lg);
   padding-right: var(--spacing-lg);
 }
@@ -471,20 +468,27 @@ header
   line-height: var(--spacing-3xl);
   border: transparent;
   letter-spacing: var(--letter-spacing-large);
+  border-radius:30px;
 }
 
 .header-area .main-nav .nav li a {
   color: var(--color-text-primary);
 }
 
-.header-area .main-nav .nav li:hover a,
-.header-area .main-nav .nav li a.active {
-  color: var(--color-primary-red-alt) !important;
+
+.header-area .main-nav .nav li a.active,
+.background-header .nav li a.active  {
+  background:linear-gradient(135deg,var(--color-gradient-start),var(--color-gradient-end))!important;
+  color:var(--color-background-white)!important;
+  border-radius:30px;
+  padding:2px auto;
+}
+.header-area .main-nav .nav li:hover a{
+  color:var(--color-gradient-end);
 }
 
 .background-header .main-nav .nav li:hover a,
 .background-header .main-nav .nav li a.active {
-  color: var(--color-primary-red-alt) !important;
   opacity: 1;
 }
 
@@ -669,7 +673,7 @@ header
 }
 
 @media (max-width: 1200px) {
-  .header-area .main-nav .nav li {
+  .header-area .main-nav .nav li a{
     padding-left: 12px;
     padding-right: 12px;
   }
@@ -739,7 +743,7 @@ header
   .header-area.header-sticky .nav {
     margin-top: var(--size-header-height);
   }
-  .header-area .main-nav .nav li {
+  .header-area .main-nav .nav li a{
     width: 100%;
     background: var(--color-background-white);
     border-bottom: 1px solid #e7e7e7;
@@ -888,7 +892,7 @@ Banner Style
   position: relative;
   overflow: hidden;
   /* background:linear-gradient(135deg,var(--light1),var(--light2),var(--light3)); */
-  box-shadow:0px 1px 10px #ffffff;
+  box-shadow:0px 1px 1px #d6d6d6;
 }
 
 .main-banner:after {
@@ -1833,7 +1837,7 @@ footer .footer-item h4 {
 }
 
 footer .about .logo img {
-  width: 89px;
+  height:89px;
   margin-bottom: var(--spacing-2xl);
 }
 
